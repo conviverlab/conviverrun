@@ -6,6 +6,12 @@
 <script src="./support.js"></script>
 </head>
 <body>
+<template id="__bundler_thumbnail" data-bg-color="#4d28cc">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#4d28cc"/>
+    <text x="600" y="470" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="340" fill="#ffffff" text-anchor="middle">CR</text>
+  </svg>
+</template>
 <x-dc>
 <helmet>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -420,6 +426,7 @@ class Component extends DCLogic {
   state = { now: Date.now(), openFaq: 0 };
 
   componentDidMount() {
+    document.title = 'Conviver Run';
     this._t = setInterval(() => this.setState({ now: Date.now() }), 1000);
   }
   componentWillUnmount() {
